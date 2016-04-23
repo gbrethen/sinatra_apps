@@ -1,0 +1,32 @@
+<div class="container">
+	<h2>People</h2>
+	<table class="table table-striped">
+		<thead>
+		  <th>Name</th>
+		  <th>Birthdate</th>
+		  <th>Action</th>
+		  <th>Action</th>
+		</thead>
+		<tbody>
+		  <% @people.each do |person| %>
+			<tr>
+			  <td>
+				<a href="/people/<%= "#{person.id}" %>"><%= "#{person.first_name} #{person.last_name}" %></a>
+			  </td>
+			  <td>
+				<%= "#{person.birthdate}" %>
+			  </td>
+			  <td>
+				<a href="<%= "/people/#{person.id}/edit" %>" class="btn btn-default">Edit</a>
+			  </td>
+			  <td>
+				<form action="<%= "/people/#{person.id}" %>" method="post">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit" value="Delete" class="btn btn-danger"/>
+				</form>
+			  </td>
+			</tr>
+		  <% end %>
+		</tbody>
+	</table>
+ </div>

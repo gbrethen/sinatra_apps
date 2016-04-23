@@ -19,13 +19,7 @@ DB_USERNAME = 'postgres'
 
 DB_PASSWORD = 'BrAnDoN9991'
 
-desc "Create #{APP_NAME} databases"
-  task "create" do
-    puts "Creating #{APP_NAME} development and test databases if they don't exist..."
-    puts "the user name is #{DB_USERNAME}"
-      system("createdb #{DB_NAME} --username=#{DB_USERNAME} && createdb #{TEST_DB_NAME} --username=#{DB_USERNAME}")
-  end
-  
+ 
 
 if ENV['DEBUG']
   ActiveRecord::Base.logger = Logger.new(STDOUT)

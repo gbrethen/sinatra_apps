@@ -24,21 +24,45 @@ def my_message(number)
 	end
 end
 
+def setup_index_view(birthdate)
+	birthdate = birthdate
+	
+	@birth_path_num = magic_method(birthdate)
+	@birth_path_num = magic_method(@birth_path_num)
+
+	if (@birth_path_num > 9)
+		@birth_path_num = magic_method(@birth_path_num)
+	end
+	
+	@message = my_message(@birth_path_num)
+end
+
+def valid_birthdate(input)
+	if input.length == 8 && input.match(/^[0-9]+[0-9]$/)
+		return true
+	else
+		return false
+	end
+end
+
 get '/' do
 	erb :form
 end
 
-post '/' do
-	birthdate = params[:birthdate]
-	
-	number = magic_method(birthdate)
-	number = magic_method(number)
-
-	if (number > 9)
-		number = magic_method(number)
-	end
-	
-	@message = my_message(number)
+get '/message/:birth_path_num' do
+	@birth_path_num = params[:birth_path_num].to_i
+	@message = my_message(@birth_path_num)
 	
 	erb :index
+end
+
+post '/' do
+	birthdate = params[:birthdate].gsub("-", "")
+	if valid_birthdate(birthdate)
+		setup_index_view(birthdate)
+		redirect "/message/#{@birth_path_num}"
+	else
+		@error = "Invalid entry. Please try again!"
+		erb :form
+	end
 end
