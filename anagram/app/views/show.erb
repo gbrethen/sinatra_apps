@@ -1,0 +1,8 @@
+<div class="col-md-4">
+	<div class="alert alert-success" role="alert">Anagrams for <%= "#{@word}" %></div>
+	<ul class="list-group">
+		<%	@anagrams.each do |anagram| %>
+			<li class='list-group-item'><%= "#{anagram}" %></li>
+		<% end %>
+	</ul>
+</div>
