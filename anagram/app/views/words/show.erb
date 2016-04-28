@@ -1,0 +1,15 @@
+<div class="col-md-4">
+	<div class="alert alert-success" role="alert">The word is: <u><%= "#{@word[:text]}" %></u></div>
+	<table class="table table-bordered">
+		<thead>
+			<th>Text</th>
+			<th>Letters</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= "#{@word[:text]}" %></td>
+				<td><%= "#{@word[:letters]}" %></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

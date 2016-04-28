@@ -1,0 +1,26 @@
+<div class="col-md-12">
+	<div class="alert alert-success" role="alert">Words in Dictionary</div>
+	<table class="table table-striped" data-toggle="table" data-pagination="true" data-page-size="10" data-side-pagination="client">
+		<thead>
+			<th>Text</th>
+			<th>Letters</th>
+			<th>Action</th>
+			<th>Action</th>
+		</thead>
+		<tbody>
+		<% @words.each do |word| %>
+			<tr>
+				<td><a href="<%= "/words/#{word[:id]}" %>"><%= "#{word[:text]}" %></a></td>
+				<td><%= "#{word[:letters]}" %></td>
+				<td><a href="<%= "/words/#{word[:id]}/edit" %>" class="btn btn-default">Edit</a></td>
+				<td>
+					<form action="<%= "/words/#{word[:id]}" %>" method="post">
+						<input type="hidden" name="_method" value="delete"/>
+						<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;Delete</button>
+					</form>
+				</td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</div>
