@@ -1,10 +1,16 @@
-<form class="col-md-10 form-inline" action="/" method="post">
+<form action="/" method="post">
 	<% if @error.present? %><div class="alert alert-danger col-md-8"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;<%= @error %></p></div><br/><% end %>
-	<div class="form-group">
-		<label for="word">Enter a word:&nbsp;</label>
-		<input class="form-control" type="text" id="word" name="word">
+	<div>
+		<i>Please enter a word below</i>
 	</div>
-	<input type="submit" class="btn btn-default">
+	<div class="col-md-4 col-md-offset-4">
+		<input type="text" id="word" name="word" placeholder="Enter a word">
+	</div>
+	<div class="col-md-4">&nbsp;</div>
+	<div class="col-md-12">&nbsp;</div>
+	<div>
+		<input type="submit" class="btn btn-primary" value="SHOW ANAGRAMS">
+	</div>
 </form>
 <script>
 	$(document).ready(function(){

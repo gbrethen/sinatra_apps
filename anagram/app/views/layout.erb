@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="/styles/bootstrap.min.css"/>
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"/>
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"/>-->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="/styles/themes/smoothness/jquery-ui-1.10.4.custom.min.css"/>
+		<!--<link rel="stylesheet" href="/styles/themes/smoothness/jquery-ui-1.10.4.custom.min.css"/>-->
 		<link rel="stylesheet" href="/styles/site.css"/>
 		
 		<script src="/scripts/jquery-2.1.4.min.js" type="text/javascript"></script>
@@ -23,14 +23,26 @@
 	</head>
 	<body>
 		<div class="container" id="container">
-			<br/>
-			<div class="jumbotron">
-				<img src="/images/gbb_logo.png" alt="GBB Logo"/>
-				<h2>Anagrams Generator</h2>
-				<p>Welcome to my ANAGRAM GENERATOR</p>
-				<div><a href="/" class="btn btn-primary">Home</a>&nbsp;<a href="/words" class="btn btn-primary">Word List</a>&nbsp;<a href="/new" class="btn btn-primary">Add Word</a></div>
+			<nav class="navbar navbar-inverse" style="margin-top:5px; height:80px;">
+				<div class="container-fluid">
+					<div class="navbar-header">
+					  <a id="brand" class="navbar-brand" href="gbrethen.github.io">
+						<img id="logo" alt="Brand" src="/images/gbb_logo_sm.png" height=71 />
+					  </a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/">Anagram!It</a></li>
+						<li><a href="/words">View Dictionary</a></li>
+						<li><a href="/new">Add Word</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="welcome">
+				<p><h3 style="color: #2196f3;">Welcome to the<br/>ANAGRAMS GENERATOR!</h3></p>
 			</div>
-			<%= yield %>
+			<div id="main">
+				<%= yield %>
+			</div>
 		</div>
 	</body>
 </html>

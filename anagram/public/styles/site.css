@@ -12,17 +12,37 @@ body{
 	min-height:100%;
 	height:100%;
 	margin-bottom:-75px;
+	background: url("/images/tiles-01.png");
 }
 
 #container{
 	min-height:100%;
 	box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 15px -4px rgba(31, 73, 125, 0.8);
+	background: #FFF;
 }
 
-.jumbotron{
-	background: #596a72; /* Old browsers */
-	background: -moz-linear-gradient(top, #596a72 0%, #cedce7 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #596a72 0%,#cedce7 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #596a72 0%,#cedce7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#596a72', endColorstr='#cedce7',GradientType=0 ); /* IE6-9 */
+.welcome{
+	margin:0 auto;
+	text-align:center;
+	padding:10px;
 }
+
+#brand{
+	margin:0;
+	padding:0;
+	line-height: 75px;
+}
+
+#brand img{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+#main{
+	width: 100%;
+	margin:0 auto;
+	margin-top: 10px;
+	text-align:center;
+}
+
+
