@@ -1,5 +1,5 @@
-<div class="col-md-4">
-	<div class="alert alert-success" role="alert">Anagrams for <%= "#{@word}" %></div>
+<div class="col-md-4 col-md-offset-4">
+	<div class="alert alert-default" role="alert">Anagrams for <%= "#{@word}" %></div>
 	<ul class="list-group">
 		<% if !@anagrams.nil? %>
 			<%	@anagrams.each do |anagram| %>
